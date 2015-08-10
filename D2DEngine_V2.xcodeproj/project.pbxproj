@@ -484,7 +484,7 @@
 					"-lfreetype",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Volumes/DATA/Graphics/D2DEngine_V2/third_include/libpng /Volumes/DATA/Graphics/D2DEngine_V2/third_include/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/third_include/libpng $(PROJECT_DIR)/third_include/freetype2";
 			};
 			name = Debug;
 		};
@@ -509,7 +509,7 @@
 					"-lfreetype",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Volumes/DATA/Graphics/D2DEngine_V2/third_include/libpng /Volumes/DATA/Graphics/D2DEngine_V2/third_include/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/third_include/libpng $(PROJECT_DIR)/third_include/freetype2";
 			};
 			name = Release;
 		};

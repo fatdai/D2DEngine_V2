@@ -15,7 +15,7 @@ using namespace D2D;
 
 int main(int argc, const char * argv[]) {
     
-    auto director = new Director("/Volumes/DATA/Graphics/D2DEngine_V2/Resources");
+    auto director = new Director("/Users/dai/Graphics/D2DEngine_V2/Resources");
     director->init("D2D Engine",640, 480);
     
     // 添加资源的文件夹

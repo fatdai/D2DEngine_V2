@@ -95,18 +95,19 @@ namespace D2D {
         
         auto node1 = new Node;
         node1->setPosition(320,240);
-        node1->setAnchor(0.5, 0.5);
+        node1->setAnchor(0, 0);
         node1->setContentSize(200, 100);
         node1->setColor(1,0,0);
-        node1->setScale(1);
-        node1->setRotate(30);
+        node1->setScale(2);
+      //  node1->setRotate(30);
         rootNode.addChild(node1);
         
         auto b = new Node;
         b->setContentSize(50, 50);
-        b->setPosition(100, 50);
+      //  b->setPosition(100, 50);
         b->setColor(1, 1, 0);
-        b->setAnchor(0.5, 0.5);
+        b->setAnchor(0, 0);
+       // b->setRotate(30);
         node1->addChild(b);
         
         //-----------------------------------------

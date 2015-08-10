@@ -131,8 +131,7 @@ namespace D2D {
         void removeFromParent();
 
         void onExit();
-        
-        void getModelViewTransform(Mat4& dst);
+
         
     protected:
         

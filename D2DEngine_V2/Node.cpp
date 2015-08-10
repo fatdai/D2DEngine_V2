@@ -84,8 +84,8 @@ namespace D2D {
             // node的左下角坐标
 //            float bl_x = x - _anchor.getAnchorX() * _contentSize.width * scalex;
 //            float bl_y = y - _anchor.getAnchorY() * _contentSize.height * scaley;
-            float offx = _anchor.getAnchorX() * _contentSize.width * scalex;
-            float offy = _anchor.getAnchorY() * _contentSize.height * scaley;
+            float offx = _anchor.getAnchorX() * _contentSize.width;
+            float offy = _anchor.getAnchorY() * _contentSize.height;
             
             float sinx = sinf(rad);
             float cosx = cosf(rad);
@@ -121,19 +121,6 @@ namespace D2D {
         
         // 计算自己的 modelview
     }
-    
-    void Node::getModelViewTransform(Mat4& dst){
-//        Node* temp = _parent;
-//        while (temp) {
-//            Mat4::multiply(temp->_transform,_transform,&dst);
-//        }
-//        
-//        
-//        if (_parent) {
-//            
-//        }
-    }
-    
     
     void Node::testDrawSelf(const Mat4& mat){
         
