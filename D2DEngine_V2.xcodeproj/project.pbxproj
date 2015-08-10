@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04DC68991B7864810060DAC4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68981B7864810060DAC4 /* main.cpp */; };
+		04DC68A11B7865040060DAC4 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC68A01B7865040060DAC4 /* SDL2.framework */; };
+		04DC68A41B7865540060DAC4 /* TestSDL2Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68A31B7865540060DAC4 /* TestSDL2Window.cpp */; };
+		04DC68A61B7866300060DAC4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC68A51B7866300060DAC4 /* OpenGL.framework */; };
+		04DC68C81B7868250060DAC4 /* CCAffineTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68AB1B7868250060DAC4 /* CCAffineTransform.cpp */; };
+		04DC68C91B7868250060DAC4 /* CCGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68AD1B7868250060DAC4 /* CCGeometry.cpp */; };
+		04DC68CA1B7868250060DAC4 /* CCVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68B11B7868250060DAC4 /* CCVertex.cpp */; };
+		04DC68CB1B7868250060DAC4 /* Mat4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68B31B7868250060DAC4 /* Mat4.cpp */; };
+		04DC68CC1B7868250060DAC4 /* MathUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68B61B7868250060DAC4 /* MathUtil.cpp */; };
+		04DC68CD1B7868250060DAC4 /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68BA1B7868250060DAC4 /* Quaternion.cpp */; };
+		04DC68CE1B7868250060DAC4 /* TransformUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68BD1B7868250060DAC4 /* TransformUtils.cpp */; };
+		04DC68CF1B7868250060DAC4 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68BF1B7868250060DAC4 /* Vec2.cpp */; };
+		04DC68D01B7868250060DAC4 /* Vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68C21B7868250060DAC4 /* Vec3.cpp */; };
+		04DC68D11B7868250060DAC4 /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68C51B7868250060DAC4 /* Vec4.cpp */; };
+		04DC68DF1B7868470060DAC4 /* PrimitiveRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68D81B7868470060DAC4 /* PrimitiveRender.cpp */; };
+		04DC68E01B7868470060DAC4 /* ShaderUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68DA1B7868470060DAC4 /* ShaderUtil.cpp */; };
+		04DC68E51B7868700060DAC4 /* ConvertUTF.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68E21B7868700060DAC4 /* ConvertUTF.c */; };
+		04DC68E61B7868700060DAC4 /* ConvertUTFWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68E41B7868700060DAC4 /* ConvertUTFWrapper.cpp */; };
+		04DC68EA1B7868940060DAC4 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68E81B7868940060DAC4 /* Text.cpp */; };
+		04DC68EF1B7868DA0060DAC4 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68EC1B7868DA0060DAC4 /* Node.cpp */; };
+		04DC68F51B7868F90060DAC4 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68F11B7868F90060DAC4 /* ImageLoader.cpp */; };
+		04DC68F61B7868F90060DAC4 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68F31B7868F90060DAC4 /* Utils.cpp */; };
+		04DC68F91B7869210060DAC4 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC68F71B7869210060DAC4 /* libfreetype.a */; };
+		04DC68FA1B7869210060DAC4 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC68F81B7869210060DAC4 /* libpng.a */; };
+		04DC68FC1B7869310060DAC4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC68FB1B7869310060DAC4 /* libz.dylib */; };
+		04DC69061B786A0F0060DAC4 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC68FE1B786A0F0060DAC4 /* Data.cpp */; };
+		04DC69071B786A0F0060DAC4 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC69001B786A0F0060DAC4 /* Director.cpp */; };
+		04DC69081B786A0F0060DAC4 /* FileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC69021B786A0F0060DAC4 /* FileUtil.cpp */; };
+		04DC69091B786A0F0060DAC4 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC69041B786A0F0060DAC4 /* Texture2D.cpp */; };
+		04DC690C1B786B720060DAC4 /* globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC690A1B786B720060DAC4 /* globals.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04DC68931B7864810060DAC4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04DC68951B7864810060DAC4 /* D2DEngine_V2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = D2DEngine_V2; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DC68981B7864810060DAC4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		04DC689F1B78649C0060DAC4 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		04DC68A01B7865040060DAC4 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		04DC68A31B7865540060DAC4 /* TestSDL2Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSDL2Window.cpp; sourceTree = "<group>"; };
+		04DC68A51B7866300060DAC4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		04DC68AB1B7868250060DAC4 /* CCAffineTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCAffineTransform.cpp; sourceTree = "<group>"; };
+		04DC68AC1B7868250060DAC4 /* CCAffineTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAffineTransform.h; sourceTree = "<group>"; };
+		04DC68AD1B7868250060DAC4 /* CCGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCGeometry.cpp; sourceTree = "<group>"; };
+		04DC68AE1B7868250060DAC4 /* CCGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGeometry.h; sourceTree = "<group>"; };
+		04DC68AF1B7868250060DAC4 /* CCMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMath.h; sourceTree = "<group>"; };
+		04DC68B01B7868250060DAC4 /* CCMathBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMathBase.h; sourceTree = "<group>"; };
+		04DC68B11B7868250060DAC4 /* CCVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCVertex.cpp; sourceTree = "<group>"; };
+		04DC68B21B7868250060DAC4 /* CCVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVertex.h; sourceTree = "<group>"; };
+		04DC68B31B7868250060DAC4 /* Mat4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mat4.cpp; sourceTree = "<group>"; };
+		04DC68B41B7868250060DAC4 /* Mat4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mat4.h; sourceTree = "<group>"; };
+		04DC68B51B7868250060DAC4 /* Mat4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mat4.inl; sourceTree = "<group>"; };
+		04DC68B61B7868250060DAC4 /* MathUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathUtil.cpp; sourceTree = "<group>"; };
+		04DC68B71B7868250060DAC4 /* MathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUtil.h; sourceTree = "<group>"; };
+		04DC68B81B7868250060DAC4 /* MathUtil.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MathUtil.inl; sourceTree = "<group>"; };
+		04DC68B91B7868250060DAC4 /* MathUtilNeon.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MathUtilNeon.inl; sourceTree = "<group>"; };
+		04DC68BA1B7868250060DAC4 /* Quaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quaternion.cpp; sourceTree = "<group>"; };
+		04DC68BB1B7868250060DAC4 /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
+		04DC68BC1B7868250060DAC4 /* Quaternion.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Quaternion.inl; sourceTree = "<group>"; };
+		04DC68BD1B7868250060DAC4 /* TransformUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformUtils.cpp; sourceTree = "<group>"; };
+		04DC68BE1B7868250060DAC4 /* TransformUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformUtils.h; sourceTree = "<group>"; };
+		04DC68BF1B7868250060DAC4 /* Vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2.cpp; sourceTree = "<group>"; };
+		04DC68C01B7868250060DAC4 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec2.h; sourceTree = "<group>"; };
+		04DC68C11B7868250060DAC4 /* Vec2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vec2.inl; sourceTree = "<group>"; };
+		04DC68C21B7868250060DAC4 /* Vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec3.cpp; sourceTree = "<group>"; };
+		04DC68C31B7868250060DAC4 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec3.h; sourceTree = "<group>"; };
+		04DC68C41B7868250060DAC4 /* Vec3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vec3.inl; sourceTree = "<group>"; };
+		04DC68C51B7868250060DAC4 /* Vec4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec4.cpp; sourceTree = "<group>"; };
+		04DC68C61B7868250060DAC4 /* Vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec4.h; sourceTree = "<group>"; };
+		04DC68C71B7868250060DAC4 /* Vec4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vec4.inl; sourceTree = "<group>"; };
+		04DC68D31B7868470060DAC4 /* base_tex.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = base_tex.frag; sourceTree = "<group>"; };
+		04DC68D41B7868470060DAC4 /* base_tex.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = base_tex.vert; sourceTree = "<group>"; };
+		04DC68D51B7868470060DAC4 /* font.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = font.frag; sourceTree = "<group>"; };
+		04DC68D61B7868470060DAC4 /* font.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = font.vert; sourceTree = "<group>"; };
+		04DC68D71B7868470060DAC4 /* frag.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = frag.frag; sourceTree = "<group>"; };
+		04DC68D81B7868470060DAC4 /* PrimitiveRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrimitiveRender.cpp; sourceTree = "<group>"; };
+		04DC68D91B7868470060DAC4 /* PrimitiveRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimitiveRender.h; sourceTree = "<group>"; };
+		04DC68DA1B7868470060DAC4 /* ShaderUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderUtil.cpp; sourceTree = "<group>"; };
+		04DC68DB1B7868470060DAC4 /* ShaderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtil.h; sourceTree = "<group>"; };
+		04DC68DC1B7868470060DAC4 /* test_color.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test_color.frag; sourceTree = "<group>"; };
+		04DC68DD1B7868470060DAC4 /* test_color.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test_color.vert; sourceTree = "<group>"; };
+		04DC68DE1B7868470060DAC4 /* vertex.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = vertex.vert; sourceTree = "<group>"; };
+		04DC68E21B7868700060DAC4 /* ConvertUTF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ConvertUTF.c; sourceTree = "<group>"; };
+		04DC68E31B7868700060DAC4 /* ConvertUTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertUTF.h; sourceTree = "<group>"; };
+		04DC68E41B7868700060DAC4 /* ConvertUTFWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConvertUTFWrapper.cpp; sourceTree = "<group>"; };
+		04DC68E81B7868940060DAC4 /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		04DC68E91B7868940060DAC4 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		04DC68EC1B7868DA0060DAC4 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		04DC68ED1B7868DA0060DAC4 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		04DC68EE1B7868DA0060DAC4 /* NonCopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonCopyable.h; sourceTree = "<group>"; };
+		04DC68F11B7868F90060DAC4 /* ImageLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
+		04DC68F21B7868F90060DAC4 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		04DC68F31B7868F90060DAC4 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		04DC68F41B7868F90060DAC4 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		04DC68F71B7869210060DAC4 /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfreetype.a; sourceTree = "<group>"; };
+		04DC68F81B7869210060DAC4 /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpng.a; sourceTree = "<group>"; };
+		04DC68FB1B7869310060DAC4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		04DC68FE1B786A0F0060DAC4 /* Data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Data.cpp; sourceTree = "<group>"; };
+		04DC68FF1B786A0F0060DAC4 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		04DC69001B786A0F0060DAC4 /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
+		04DC69011B786A0F0060DAC4 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		04DC69021B786A0F0060DAC4 /* FileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileUtil.cpp; sourceTree = "<group>"; };
+		04DC69031B786A0F0060DAC4 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtil.h; sourceTree = "<group>"; };
+		04DC69041B786A0F0060DAC4 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture2D.cpp; sourceTree = "<group>"; };
+		04DC69051B786A0F0060DAC4 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		04DC690A1B786B720060DAC4 /* globals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = globals.cpp; sourceTree = "<group>"; };
+		04DC690B1B786B720060DAC4 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		04DC690D1B7871B80060DAC4 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04DC68921B7864810060DAC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DC68FC1B7869310060DAC4 /* libz.dylib in Frameworks */,
+				04DC68A61B7866300060DAC4 /* OpenGL.framework in Frameworks */,
+				04DC68A11B7865040060DAC4 /* SDL2.framework in Frameworks */,
+				04DC68F91B7869210060DAC4 /* libfreetype.a in Frameworks */,
+				04DC68FA1B7869210060DAC4 /* libpng.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04DC688C1B7864810060DAC4 = {
+			isa = PBXGroup;
+			children = (
+				04DC68FB1B7869310060DAC4 /* libz.dylib */,
+				04DC68F71B7869210060DAC4 /* libfreetype.a */,
+				04DC68F81B7869210060DAC4 /* libpng.a */,
+				04DC68A51B7866300060DAC4 /* OpenGL.framework */,
+				04DC68A01B7865040060DAC4 /* SDL2.framework */,
+				04DC689F1B78649C0060DAC4 /* Resources */,
+				04DC68971B7864810060DAC4 /* D2DEngine_V2 */,
+				04DC68961B7864810060DAC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04DC68961B7864810060DAC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68951B7864810060DAC4 /* D2DEngine_V2 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04DC68971B7864810060DAC4 /* D2DEngine_V2 */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68FD1B7869EB0060DAC4 /* base */,
+				04DC68F01B7868EA0060DAC4 /* global */,
+				04DC68EB1B7868CB0060DAC4 /* node */,
+				04DC68E71B78687E0060DAC4 /* font */,
+				04DC68E11B78685D0060DAC4 /* convertUTF */,
+				04DC68D21B7868330060DAC4 /* shader */,
+				04DC68AA1B7867E10060DAC4 /* math */,
+				04DC68A21B7865270060DAC4 /* test */,
+				04DC68981B7864810060DAC4 /* main.cpp */,
+			);
+			path = D2DEngine_V2;
+			sourceTree = "<group>";
+		};
+		04DC68A21B7865270060DAC4 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68A31B7865540060DAC4 /* TestSDL2Window.cpp */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
+		04DC68AA1B7867E10060DAC4 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68AB1B7868250060DAC4 /* CCAffineTransform.cpp */,
+				04DC68AC1B7868250060DAC4 /* CCAffineTransform.h */,
+				04DC68AD1B7868250060DAC4 /* CCGeometry.cpp */,
+				04DC68AE1B7868250060DAC4 /* CCGeometry.h */,
+				04DC68AF1B7868250060DAC4 /* CCMath.h */,
+				04DC68B01B7868250060DAC4 /* CCMathBase.h */,
+				04DC68B11B7868250060DAC4 /* CCVertex.cpp */,
+				04DC68B21B7868250060DAC4 /* CCVertex.h */,
+				04DC68B31B7868250060DAC4 /* Mat4.cpp */,
+				04DC68B41B7868250060DAC4 /* Mat4.h */,
+				04DC68B51B7868250060DAC4 /* Mat4.inl */,
+				04DC68B61B7868250060DAC4 /* MathUtil.cpp */,
+				04DC68B71B7868250060DAC4 /* MathUtil.h */,
+				04DC68B81B7868250060DAC4 /* MathUtil.inl */,
+				04DC68B91B7868250060DAC4 /* MathUtilNeon.inl */,
+				04DC68BA1B7868250060DAC4 /* Quaternion.cpp */,
+				04DC68BB1B7868250060DAC4 /* Quaternion.h */,
+				04DC68BC1B7868250060DAC4 /* Quaternion.inl */,
+				04DC68BD1B7868250060DAC4 /* TransformUtils.cpp */,
+				04DC68BE1B7868250060DAC4 /* TransformUtils.h */,
+				04DC68BF1B7868250060DAC4 /* Vec2.cpp */,
+				04DC68C01B7868250060DAC4 /* Vec2.h */,
+				04DC68C11B7868250060DAC4 /* Vec2.inl */,
+				04DC68C21B7868250060DAC4 /* Vec3.cpp */,
+				04DC68C31B7868250060DAC4 /* Vec3.h */,
+				04DC68C41B7868250060DAC4 /* Vec3.inl */,
+				04DC68C51B7868250060DAC4 /* Vec4.cpp */,
+				04DC68C61B7868250060DAC4 /* Vec4.h */,
+				04DC68C71B7868250060DAC4 /* Vec4.inl */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
+		04DC68D21B7868330060DAC4 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68D31B7868470060DAC4 /* base_tex.frag */,
+				04DC68D41B7868470060DAC4 /* base_tex.vert */,
+				04DC68D51B7868470060DAC4 /* font.frag */,
+				04DC68D61B7868470060DAC4 /* font.vert */,
+				04DC68D71B7868470060DAC4 /* frag.frag */,
+				04DC68D81B7868470060DAC4 /* PrimitiveRender.cpp */,
+				04DC68D91B7868470060DAC4 /* PrimitiveRender.h */,
+				04DC68DA1B7868470060DAC4 /* ShaderUtil.cpp */,
+				04DC68DB1B7868470060DAC4 /* ShaderUtil.h */,
+				04DC68DC1B7868470060DAC4 /* test_color.frag */,
+				04DC68DD1B7868470060DAC4 /* test_color.vert */,
+				04DC68DE1B7868470060DAC4 /* vertex.vert */,
+			);
+			name = shader;
+			sourceTree = "<group>";
+		};
+		04DC68E11B78685D0060DAC4 /* convertUTF */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68E21B7868700060DAC4 /* ConvertUTF.c */,
+				04DC68E31B7868700060DAC4 /* ConvertUTF.h */,
+				04DC68E41B7868700060DAC4 /* ConvertUTFWrapper.cpp */,
+			);
+			name = convertUTF;
+			sourceTree = "<group>";
+		};
+		04DC68E71B78687E0060DAC4 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68E81B7868940060DAC4 /* Text.cpp */,
+				04DC68E91B7868940060DAC4 /* Text.h */,
+			);
+			name = font;
+			sourceTree = "<group>";
+		};
+		04DC68EB1B7868CB0060DAC4 /* node */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68EC1B7868DA0060DAC4 /* Node.cpp */,
+				04DC68ED1B7868DA0060DAC4 /* Node.h */,
+				04DC68EE1B7868DA0060DAC4 /* NonCopyable.h */,
+			);
+			name = node;
+			sourceTree = "<group>";
+		};
+		04DC68F01B7868EA0060DAC4 /* global */ = {
+			isa = PBXGroup;
+			children = (
+				04DC68F11B7868F90060DAC4 /* ImageLoader.cpp */,
+				04DC68F21B7868F90060DAC4 /* ImageLoader.h */,
+				04DC68F31B7868F90060DAC4 /* Utils.cpp */,
+				04DC68F41B7868F90060DAC4 /* Utils.h */,
+				04DC690A1B786B720060DAC4 /* globals.cpp */,
+				04DC690B1B786B720060DAC4 /* globals.h */,
+			);
+			name = global;
+			sourceTree = "<group>";
+		};
+		04DC68FD1B7869EB0060DAC4 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				04DC690D1B7871B80060DAC4 /* Types.h */,
+				04DC68FE1B786A0F0060DAC4 /* Data.cpp */,
+				04DC68FF1B786A0F0060DAC4 /* Data.h */,
+				04DC69001B786A0F0060DAC4 /* Director.cpp */,
+				04DC69011B786A0F0060DAC4 /* Director.h */,
+				04DC69021B786A0F0060DAC4 /* FileUtil.cpp */,
+				04DC69031B786A0F0060DAC4 /* FileUtil.h */,
+				04DC69041B786A0F0060DAC4 /* Texture2D.cpp */,
+				04DC69051B786A0F0060DAC4 /* Texture2D.h */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04DC68941B7864810060DAC4 /* D2DEngine_V2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DC689C1B7864810060DAC4 /* Build configuration list for PBXNativeTarget "D2DEngine_V2" */;
+			buildPhases = (
+				04DC68911B7864810060DAC4 /* Sources */,
+				04DC68931B7864810060DAC4 /* CopyFiles */,
+				04DC68921B7864810060DAC4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = D2DEngine_V2;
+			productName = D2DEngine_V2;
+			productReference = 04DC68951B7864810060DAC4 /* D2DEngine_V2 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04DC688D1B7864810060DAC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = mac;
+				TargetAttributes = {
+					04DC68941B7864810060DAC4 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 04DC68901B7864810060DAC4 /* Build configuration list for PBXProject "D2DEngine_V2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04DC688C1B7864810060DAC4;
+			productRefGroup = 04DC68961B7864810060DAC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04DC68941B7864810060DAC4 /* D2DEngine_V2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04DC68911B7864810060DAC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DC68D01B7868250060DAC4 /* Vec3.cpp in Sources */,
+				04DC68A41B7865540060DAC4 /* TestSDL2Window.cpp in Sources */,
+				04DC690C1B786B720060DAC4 /* globals.cpp in Sources */,
+				04DC68CC1B7868250060DAC4 /* MathUtil.cpp in Sources */,
+				04DC68F61B7868F90060DAC4 /* Utils.cpp in Sources */,
+				04DC68EA1B7868940060DAC4 /* Text.cpp in Sources */,
+				04DC68D11B7868250060DAC4 /* Vec4.cpp in Sources */,
+				04DC68C91B7868250060DAC4 /* CCGeometry.cpp in Sources */,
+				04DC69081B786A0F0060DAC4 /* FileUtil.cpp in Sources */,
+				04DC68C81B7868250060DAC4 /* CCAffineTransform.cpp in Sources */,
+				04DC68CB1B7868250060DAC4 /* Mat4.cpp in Sources */,
+				04DC69061B786A0F0060DAC4 /* Data.cpp in Sources */,
+				04DC68E61B7868700060DAC4 /* ConvertUTFWrapper.cpp in Sources */,
+				04DC68EF1B7868DA0060DAC4 /* Node.cpp in Sources */,
+				04DC69091B786A0F0060DAC4 /* Texture2D.cpp in Sources */,
+				04DC68CD1B7868250060DAC4 /* Quaternion.cpp in Sources */,
+				04DC69071B786A0F0060DAC4 /* Director.cpp in Sources */,
+				04DC68E01B7868470060DAC4 /* ShaderUtil.cpp in Sources */,
+				04DC68CA1B7868250060DAC4 /* CCVertex.cpp in Sources */,
+				04DC68DF1B7868470060DAC4 /* PrimitiveRender.cpp in Sources */,
+				04DC68CE1B7868250060DAC4 /* TransformUtils.cpp in Sources */,
+				04DC68991B7864810060DAC4 /* main.cpp in Sources */,
+				04DC68CF1B7868250060DAC4 /* Vec2.cpp in Sources */,
+				04DC68F51B7868F90060DAC4 /* ImageLoader.cpp in Sources */,
+				04DC68E51B7868700060DAC4 /* ConvertUTF.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04DC689A1B7864810060DAC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		04DC689B1B7864810060DAC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		04DC689D1B7864810060DAC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Volumes/DATA/Graphics/D2DEngine_V2/third_include/libpng /Volumes/DATA/Graphics/D2DEngine_V2/third_include/freetype2";
+			};
+			name = Debug;
+		};
+		04DC689E1B7864810060DAC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Volumes/DATA/Graphics/D2DEngine_V2/third_include/libpng /Volumes/DATA/Graphics/D2DEngine_V2/third_include/freetype2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04DC68901B7864810060DAC4 /* Build configuration list for PBXProject "D2DEngine_V2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DC689A1B7864810060DAC4 /* Debug */,
+				04DC689B1B7864810060DAC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DC689C1B7864810060DAC4 /* Build configuration list for PBXNativeTarget "D2DEngine_V2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DC689D1B7864810060DAC4 /* Debug */,
+				04DC689E1B7864810060DAC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04DC688D1B7864810060DAC4 /* Project object */;
+}
