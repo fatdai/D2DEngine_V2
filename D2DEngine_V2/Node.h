@@ -13,7 +13,7 @@
 #include <vector>
 #include "NonCopyable.h"
 #include "CCGeometry.h"
-
+#include <string>
 using namespace std;
 
 namespace D2D {
@@ -21,30 +21,28 @@ namespace D2D {
     
     
     //-----------------------------------------
-    class Mat3{
-        
-    public:
-    
-       float m[9];
-        
-        Mat3(){
-            init();
-        }
-        
-        
-    private:
-        
-        void init(){
-            
-            m[0] = 1;
-            m[4] = 1;
-            m[8] = 1;
-            
-            m[1] = m[2] = m[3] = m[5] = m[6] = m[7] = 0;
-        }
-        
-        
-    };
+//    class Mat3{
+//        
+//    public:
+//    
+//       float m[9];
+//        
+//        Mat3(){
+//            init();
+//        }
+//        
+//        
+//    private:
+//        
+//        void init(){
+//            
+//            m[0] = 1;
+//            m[4] = 1;
+//            m[8] = 1;
+//            
+//            m[1] = m[2] = m[3] = m[5] = m[6] = m[7] = 0;
+//        }
+//    };
     
     
     //-----------------------------------------
@@ -90,10 +88,11 @@ namespace D2D {
     public:
         
         // for test
-        void testDrawSelf(const Mat4& mat);
-        void startRender();
-        void testRender(const Mat4& mat);
-        void visit();
+    //    void testDrawSelf(const Mat4& mat);
+    //    void startRender();
+    //    void testRender(const Mat4& mat);
+        
+        
         Shader* _testShader = nullptr;
         
     public:
@@ -116,6 +115,8 @@ namespace D2D {
         
         void setTag(int tag){ _tag = tag;};
         int getTag(){return _tag;};
+        int getZOrder(){return _zorder;}
+        void setZOrder(int zorder){_zorder = zorder;}
         
         void setColor(float r,float g,float b){
             _colors[0] = r;
@@ -131,11 +132,19 @@ namespace D2D {
         void removeFromParent();
 
         void onExit();
-
         
-    protected:
+        void setDebugName(const string& name){
+            _debug_name = name;
+        }
         
-        void updateTransform();
+        void setVisible(bool visible){_visible = visible;}
+        
+    public:
+        
+        virtual void render();
+        virtual void drawSelf();
+        virtual void visit(const Mat4& mat);
+        virtual void updateTransform();
         
     protected:
         
@@ -154,6 +163,9 @@ namespace D2D {
         // 如果z相同则按照添加的顺序显示
         int _z = 0;
         
+        /**
+         *  children
+         */
         vector<Node*> _children;
         
         Node* _parent = nullptr;
@@ -161,13 +173,20 @@ namespace D2D {
         // 默认为按照设计的尺寸
         Size _contentSize;
         
-        Mat4 _transform;
+        Mat4 _localTransform;
+        Mat4 _modelMatrix;
         
         bool _dirty = false;
         
         int _tag = -1;
         
         float _colors[4];
+        
+        int _zorder = 0;
+        
+        string _debug_name = "default";
+        
+        bool _visible = true;
     };
 };
 

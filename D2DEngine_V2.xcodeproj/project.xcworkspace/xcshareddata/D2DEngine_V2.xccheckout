@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DB5BFF66-41FC-4861-B40B-49BE22C05A37</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>D2DEngine_V2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A8FCE3A51FB2A1D06708D572327DA71E947BDB64</key>
 		<string>https://github.com/fatdai/D2DEngine_V2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>D2DEngine_V2.xcodeproj/project.xcworkspace</string>
+	<string>D2DEngine_V2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A8FCE3A51FB2A1D06708D572327DA71E947BDB64</key>

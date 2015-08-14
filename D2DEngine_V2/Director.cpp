@@ -15,6 +15,7 @@
 #include "Node.h"
 #include "globals.h"
 #include "Text.h"
+#include "Scene.h"
 
 // 存在如下单例
 //  ShaderUtil
@@ -90,24 +91,26 @@ namespace D2D {
 //        label.setPosition(10,400);
 //        label.setString("abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890-=_+,.?~@#$%^&*()\n我们的队伍像太阳,脚踏着祖国的大地,\n背负着民族的希望,我们是一支不可战胜的力量.\n龍飛鳳舞。");
         
-        Node rootNode;
-        rootNode.setAnchor(0, 0);
+        Scene scene;
+        scene.setDebugName("scene....");
         
         auto node1 = new Node;
         node1->setPosition(320,240);
         node1->setAnchor(0, 0);
         node1->setContentSize(200, 100);
         node1->setColor(1,0,0);
-        node1->setScale(2);
-      //  node1->setRotate(30);
-        rootNode.addChild(node1);
+//        node1->setScale(2);
+//        node1->setVisible(false);
+        node1->setDebugName("node------1");
+        scene.addChild(node1);
         
         auto b = new Node;
         b->setContentSize(50, 50);
-      //  b->setPosition(100, 50);
-        b->setColor(1, 1, 0);
+        b->setColor(0, 1, 0);
+        b->setDebugName("node--------2");
+        b->setPosition(100, 0);
+        b->setZOrder(11);
         b->setAnchor(0, 0);
-       // b->setRotate(30);
         node1->addChild(b);
         
         //-----------------------------------------
@@ -134,9 +137,9 @@ namespace D2D {
                 // handler other events
                 if (e.type == SDL_KEYDOWN) {
                     if (e.key.keysym.sym == SDLK_LEFT) {
-                        rootNode.setPositionX(rootNode.getPositionX() - 5);
+                        node1->setPositionX(node1->getPositionX() - 5);
                     }else if (e.key.keysym.sym == SDLK_RIGHT){
-                        rootNode.setPositionX(rootNode.getPositionX() + 5);
+                        node1->setPositionX(node1->getPositionX() + 5);
                     }
                 }
             }
@@ -146,10 +149,10 @@ namespace D2D {
             
             // for test
             // draw line
-            pr.render();
+            //pr.render();
            // label.render();
-            rootNode.visit();
-            rootNode.startRender();
+            scene.beforeRender();
+            scene.render();
             
             //----------------- end rendering ------------------
             
