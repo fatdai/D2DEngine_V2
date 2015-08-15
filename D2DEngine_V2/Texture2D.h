@@ -66,10 +66,10 @@ namespace D2D {
             return _height;
         }
         
+        bool hasAlpha(){return _hasAlpha;}
+        
     public:
         
-//        void initWithFontData(const void *data, ssize_t dataLen, int pixelsWide, int pixelsHigh, const Size& contentSize);
-
         void initWithData(const void* data,ssize_t dataLen,Texture2D::PixelFormat format,int width,int height);
         
     private:
@@ -81,6 +81,7 @@ namespace D2D {
         GLuint _textureId = 0;
         int _width = 0 , _height = 0;
         PixelFormat _pixelFormat;
+        bool _hasAlpha = true;
     };
     
     //-------------------------------------------
@@ -90,6 +91,7 @@ namespace D2D {
     public:
         
         TextureAtlas(Texture2D* texture,int capacity,Shader* shader);
+        
         ~TextureAtlas();
         
         // 插入一个 quad

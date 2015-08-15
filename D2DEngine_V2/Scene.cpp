@@ -21,7 +21,7 @@ namespace D2D {
     void Scene::beforeRender(){
         
         // 先对 children 排序
-        visit(Mat4::IDENTITY);
+        calculateModelMatrix(Mat4::IDENTITY);
         
     }    
 }

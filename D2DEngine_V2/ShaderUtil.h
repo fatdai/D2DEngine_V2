@@ -23,6 +23,7 @@ namespace D2D {
         Shader_BaseTex,
         Shader_Font,
         Shader_Color,
+        Shader_Sprite,
     }ShaderType;
     
     

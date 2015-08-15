@@ -20,9 +20,9 @@ namespace D2D {
     Node::Node(){
         auto director = Director::getInstance();
         _contentSize = Size(director->getWidth(),director->getHeight());
-        _colors[0] = _colors[1] = _colors[2] = _colors[3] = 1.0f;
         _localTransform = Mat4::IDENTITY;
         _modelMatrix = Mat4::IDENTITY;
+        _testColors[0] = _testColors[1] = _testColors[2] = _testColors[3] = 1.0f;
     }
     
     Node::~Node(){
@@ -74,7 +74,7 @@ namespace D2D {
         _dirty = true;
     }
     
-    void Node::updateTransform(){
+    void Node::updateLocalTransform(){
     
         if (_dirty) {
             
@@ -117,45 +117,11 @@ namespace D2D {
             Mat4::createTranslation(-offx,-offy,0,&addMat);
             _localTransform.multiply(addMat);
             
-          //  _transform.add();
-            
             _dirty = false;
         }
     }
     
-//    void Node::testDrawSelf(const Mat4& mat){
-//        
-//        //  for test,先绘制自己,再绘制 children
-//        float w = _contentSize.width;
-//        float h = _contentSize.height;
-//
-//        float vertices[] = {
-//            0,0,
-//            w,0,
-//            w,h,
-//            
-//            0,0,
-//            w,h,
-//            0,h
-//        };
-//        
-//        _testShader = ShaderUtil::getInstance()->getShader(ShaderType::Shader_Color);
-//        glUseProgram(_testShader->getProgramId());
-//        
-//        glUniformMatrix4fv(_testShader->get_U_MatrixId(),1, GL_FALSE,mat.m);
-//        glUniform4fv(_testShader->get_U_ColorId(),1,_colors);
-//        
-//        glVertexAttribPointer(_testShader->get_A_PositionId(),2,GL_FLOAT,GL_FALSE,0,vertices);
-//        glEnableVertexAttribArray(_testShader->get_A_PositionId());
-//        
-//        glDrawArrays(GL_TRIANGLES,0,6);
-//        CheckGLError();
-//        glDisableVertexAttribArray(_testShader->get_A_PositionId());
-//        
-//    }
-    
-    
-    void Node::visit(const Mat4& mat){
+    void Node::calculateModelMatrix(const Mat4& parentModelMatrix){
         
         // 先对 children 排序
         sort(_children.begin(),_children.end(),[](Node* n1,Node* n2){
@@ -166,20 +132,13 @@ namespace D2D {
             }
         });
         
-        updateTransform();
-        Mat4::multiply(mat,_localTransform,&_modelMatrix);
+        updateLocalTransform();
+        Mat4::multiply(parentModelMatrix,_localTransform,&_modelMatrix);
         
         for (int i = 0; i < _children.size(); ++i) {
-            _children[i]->visit(_modelMatrix);
+            _children[i]->calculateModelMatrix(_modelMatrix);
         }
     }
-    
-//    void Node::startRender(){
-//        auto& projMat = Director::getInstance()->getProjMat4();
-//        Mat4 dst;
-//        Mat4::multiply(projMat,_transform,&dst);
-//        testRender(dst);
-//    }
     
     void Node::render(){
         
@@ -202,18 +161,10 @@ namespace D2D {
         for (; i < _children.size(); ++i) {
             _children[i]->render();
         }
-        
-        
-        // 按照顺序绘制下来即可
-//        if (_children.size() > 0) {
-//            
-//            
-//        }else{
-//            drawSelf();
-//        }
     }
     
     void Node::drawSelf(){
+#if 0
         // 如果是 sprite,则 sprite 重写此方法即可
         // 现在为了测试,渲染自己为一个矩形
         
@@ -242,7 +193,7 @@ namespace D2D {
         Mat4::multiply(Director::getInstance()->getProjMat4(),_modelMatrix, &mat);
         
         glUniformMatrix4fv(_testShader->get_U_MatrixId(),1, GL_FALSE,mat.m);
-        glUniform4fv(_testShader->get_U_ColorId(),1,_colors);
+        glUniform4fv(_testShader->get_U_ColorId(),1,_testColors);
         
         glVertexAttribPointer(_testShader->get_A_PositionId(),2,GL_FLOAT,GL_FALSE,0,vertices);
         glEnableVertexAttribArray(_testShader->get_A_PositionId());
@@ -252,30 +203,8 @@ namespace D2D {
         glDisableVertexAttribArray(_testShader->get_A_PositionId());
         
      //   log("rendering %s",_debug_name.c_str());
+#endif
     }
-    
-//    // for test
-//    void Node::testRender(const Mat4& mat){
-//        
-//        
-////        for (int i = 0; i < _children.size(); ++i) {
-////            if (_children[i]->_zorder < 0) {
-////                
-////            }else if (_children[i]->_zorder == 0)
-////        }
-//        
-//        // 2.进行绘制
-//        testDrawSelf(mat);
-//        
-//        // 绘制 child
-//        Mat4 tempMat1;
-//        for (int i = 0; i < _children.size(); ++i) {
-//            Mat4::multiply(mat,_children[i]->_transform,&tempMat1);
-//            _children[i]->testRender(tempMat1);
-//        }
-//    }
-    
-    
     
     void Node::addChild(Node* child){
         assert(child != nullptr && child->_parent == nullptr);
@@ -305,6 +234,7 @@ namespace D2D {
             // 先断开自己
             for (int i = 0; i < _parent->_children.size(); ++i) {
                 if (_parent->_children[i] == this) {
+                    this->_parent = nullptr;
                     _parent->_children.erase(_parent->_children.begin() + i);
                     this->onExit();
                     break;

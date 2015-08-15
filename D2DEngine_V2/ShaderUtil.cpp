@@ -29,6 +29,9 @@ namespace D2D {
     const static string _ColorVertexShader = "test_color.vert";
     const static string _ColorFragShader = "test_color.frag";
     
+    const static string _SpriteVertexShader = "sprite.vert";
+    const static string _SpriteFragShader = "sprite.frag";
+    
     Shader::~Shader(){
         if (_program > 0) {
             glDeleteProgram(_program);
@@ -112,6 +115,9 @@ namespace D2D {
             _u_colorId = glGetUniformLocation(_program,"u_color");
         }else if (_shaderType == ShaderType::Shader_Color){
             _u_colorId = glGetUniformLocation(_program,"u_color");
+        }else if (_shaderType == ShaderType::Shader_Sprite){
+            _a_texCoordsId = glGetAttribLocation(_program,"a_texCoords");
+            _u_colorId = glGetUniformLocation(_program,"u_color");
         }
         
         CheckGLError();
@@ -165,6 +171,11 @@ namespace D2D {
         auto colorShader = new Shader(fileUtil->getDefauleShaderPath(_ColorVertexShader),fileUtil->getDefauleShaderPath(_ColorFragShader),Shader_Color);
         colorShader->bind();
         _shaders.insert(pair<ShaderType,Shader*>(Shader_Color,colorShader));
+        
+        // 5. sprite shader
+        auto spriteShader = new Shader(fileUtil->getDefauleShaderPath(_SpriteVertexShader),fileUtil->getDefauleShaderPath(_SpriteFragShader),Shader_Sprite);
+        spriteShader->bind();
+        _shaders.insert(pair<ShaderType,Shader*>(Shader_Sprite,spriteShader));
     }
     
     

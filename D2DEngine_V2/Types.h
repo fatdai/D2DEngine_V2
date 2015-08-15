@@ -14,12 +14,14 @@
 
 namespace D2D {
     
+    //-------------------------------------
     class Tex2F{
     public:
         float u = 0;
         float v = 0;
     };
     
+    //-------------------------------------
     class Color4F{
     public:
         float r = 1.0f;
@@ -28,6 +30,24 @@ namespace D2D {
         float a = 1.0f;
     };
     
+    //-------------------------------------
+    class V2F_T2F{
+    public:
+        Vec2 vertices;
+        Tex2F texCoords;
+    };
+    
+    //-------------------------------------
+    class V2F_T2F_Quad{
+    public:
+        V2F_T2F bl;
+        V2F_T2F br;
+        V2F_T2F tr;
+        V2F_T2F tl;
+    };
+    
+    
+    //-------------------------------------
     class V2F_C4F_T2F{
     public:
         Vec2 vertices;
@@ -35,7 +55,7 @@ namespace D2D {
         Tex2F texCoords;
     };
     
-    
+    //-------------------------------------
     class V2F_C4F_T2F_Quad{
     public:
         V2F_C4F_T2F bl;

@@ -37,12 +37,11 @@ namespace D2D {
     Texture2D* TextureCache::addImage(const string& relativePath){
         
         // 先检查是否已经存在
-        auto it = _textures.begin();
-        while (it != _textures.end()) {
-            if (it->first == relativePath) {
-                return it->second;
-            }
+        auto it = _textures.find(relativePath);
+        if (it != _textures.end()) {
+            return it->second;
         }
+
         auto texture2d = new Texture2D(relativePath);
         _textures.insert(pair<string,Texture2D*>(relativePath,texture2d));
         return texture2d;
