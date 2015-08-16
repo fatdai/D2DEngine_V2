@@ -45,6 +45,8 @@ namespace D2D {
         
         void enterForeground();
         
+        void setQuit(bool quit){_quit = quit;}
+        
     private:
         
         SDL_Window* _window;
@@ -54,6 +56,8 @@ namespace D2D {
         float _width,_height;
         
         const float _timeInterval;
+        
+        bool _quit;
     };
     
 }

@@ -39,6 +39,7 @@
 		04DC690C1B786B720060DAC4 /* globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC690A1B786B720060DAC4 /* globals.cpp */; };
 		23784EAE1B7FFEA8007E6BEE /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23784EAD1B7FFEA8007E6BEE /* libjpeg.a */; };
 		23784EB51B805DDA007E6BEE /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23784EB31B805DDA007E6BEE /* Application.cpp */; };
+		23A856621B808F8E00C8EB48 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23A856601B808F8E00C8EB48 /* EventManager.cpp */; };
 		23BEFEAB1B7F7D32007CD8D7 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23BEFEA91B7F7D32007CD8D7 /* Sprite.cpp */; };
 		23DB934B1B7E38E900AF48CB /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DB93491B7E38E900AF48CB /* Scene.cpp */; };
 		23DB93501B7E401200AF48CB /* MatrixStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DB934E1B7E401200AF48CB /* MatrixStack.cpp */; };
@@ -133,6 +134,8 @@
 		23784EAD1B7FFEA8007E6BEE /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		23784EB31B805DDA007E6BEE /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		23784EB41B805DDA007E6BEE /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		23A856601B808F8E00C8EB48 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
+		23A856611B808F8E00C8EB48 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
 		23BEFEA91B7F7D32007CD8D7 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		23BEFEAA1B7F7D32007CD8D7 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		23BEFEAF1B7F8A70007CD8D7 /* sprite.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sprite.frag; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		04DC68971B7864810060DAC4 /* D2DEngine_V2 */ = {
 			isa = PBXGroup;
 			children = (
+				23A8565E1B80862600C8EB48 /* event */,
 				23784EB01B8059D6007E6BEE /* app */,
 				04DC68FD1B7869EB0060DAC4 /* base */,
 				04DC68F01B7868EA0060DAC4 /* global */,
@@ -338,6 +342,15 @@
 			name = app;
 			sourceTree = "<group>";
 		};
+		23A8565E1B80862600C8EB48 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				23A856601B808F8E00C8EB48 /* EventManager.cpp */,
+				23A856611B808F8E00C8EB48 /* EventManager.h */,
+			);
+			name = event;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +413,7 @@
 				04DC68CC1B7868250060DAC4 /* MathUtil.cpp in Sources */,
 				04DC68F61B7868F90060DAC4 /* Utils.cpp in Sources */,
 				04DC68EA1B7868940060DAC4 /* Text.cpp in Sources */,
+				23A856621B808F8E00C8EB48 /* EventManager.cpp in Sources */,
 				04DC68D11B7868250060DAC4 /* Vec4.cpp in Sources */,
 				04DC68C91B7868250060DAC4 /* CCGeometry.cpp in Sources */,
 				04DC69081B786A0F0060DAC4 /* FileUtil.cpp in Sources */,

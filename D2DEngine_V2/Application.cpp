@@ -24,6 +24,7 @@ namespace D2D {
     _title(title),
     _width(width),
     _timeInterval(1000.0f/60.0f),
+    _quit(false),
     _height(height){
         
         if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -86,35 +87,34 @@ namespace D2D {
         
         auto director = Director::getInstance();
         
-        bool quit = false;
-        
         //Event handler
         SDL_Event e;
         
         //Enable text input
         SDL_StartTextInput();
         
-        while (!quit) {
+        while (!_quit) {
+            
+            lastTime = Now();
+            
             //--------------- capture input ----------------
-            while (SDL_PollEvent(&e) != 0) {
-                
-                lastTime = Now();
-                
-                //User requests quit
-                if (e.type == SDL_QUIT) {
-                    log("exit game engine....");
-                    quit = true;
-                }
-                
-                // handler other events
-                if (e.type == SDL_KEYDOWN) {
-                    //                    if (e.key.keysym.sym == SDLK_LEFT) {
-                    //                        node1->setPositionX(node1->getPositionX() - 5);
-                    //                    }else if (e.key.keysym.sym == SDLK_RIGHT){
-                    //                        node1->setPositionX(node1->getPositionX() + 5);
-                    //                    }
-                }
-            }
+//            while (SDL_PollEvent(&e) != 0) {
+//                
+//                //User requests quit,点击关闭窗口
+//                if (e.type == SDL_QUIT) {
+//                    log("exit game engine....");
+//                    quit = true;
+//                }
+//                
+//                // handler other events
+//                if (e.type == SDL_KEYUP) {
+//                    if (e.key.keysym.sym == SDLK_LEFT) {
+//                        log("left key clicked...");
+//                    }else if (e.key.keysym.sym == SDLK_RIGHT){
+//                        log("right key clicked...");
+//                    }
+//                }
+//            }
             
             //---------------------------------
             director->loop();
@@ -122,8 +122,13 @@ namespace D2D {
             SDL_GL_SwapWindow(_window);
             
             curTime = Now();
-            if (curTime - lastTime < _timeInterval) {
-                usleep(static_cast<useconds_t>((_timeInterval - curTime + lastTime)*1000));
+            
+            // 计算 fps
+            float timePerFrame = curTime - lastTime;
+            //float fps = 1000.0f/timePerFrame;
+            //log("FPS:%.2f",fps);
+            if (timePerFrame < _timeInterval) {
+                usleep(static_cast<useconds_t>((_timeInterval - timePerFrame)*1000));
             }
         }
         
@@ -139,7 +144,7 @@ namespace D2D {
         
         //--------------base setting----------------
         FileUtil::getInstacne()->addDirs("images/");
-    
+        
         auto scene = new Scene;
         
         auto texCache = TextureCache::getInstance();
