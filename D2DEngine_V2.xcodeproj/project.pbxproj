@@ -37,6 +37,7 @@
 		04DC69081B786A0F0060DAC4 /* FileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC69021B786A0F0060DAC4 /* FileUtil.cpp */; };
 		04DC69091B786A0F0060DAC4 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC69041B786A0F0060DAC4 /* Texture2D.cpp */; };
 		04DC690C1B786B720060DAC4 /* globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DC690A1B786B720060DAC4 /* globals.cpp */; };
+		23784EAE1B7FFEA8007E6BEE /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23784EAD1B7FFEA8007E6BEE /* libjpeg.a */; };
 		23BEFEAB1B7F7D32007CD8D7 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23BEFEA91B7F7D32007CD8D7 /* Sprite.cpp */; };
 		23DB934B1B7E38E900AF48CB /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DB93491B7E38E900AF48CB /* Scene.cpp */; };
 		23DB93501B7E401200AF48CB /* MatrixStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DB934E1B7E401200AF48CB /* MatrixStack.cpp */; };
@@ -128,6 +129,7 @@
 		04DC690A1B786B720060DAC4 /* globals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = globals.cpp; sourceTree = "<group>"; };
 		04DC690B1B786B720060DAC4 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		04DC690D1B7871B80060DAC4 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		23784EAD1B7FFEA8007E6BEE /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		23BEFEA91B7F7D32007CD8D7 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		23BEFEAA1B7F7D32007CD8D7 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		23BEFEAF1B7F8A70007CD8D7 /* sprite.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sprite.frag; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				04DC68A11B7865040060DAC4 /* SDL2.framework in Frameworks */,
 				04DC68F91B7869210060DAC4 /* libfreetype.a in Frameworks */,
 				04DC68FA1B7869210060DAC4 /* libpng.a in Frameworks */,
+				23784EAE1B7FFEA8007E6BEE /* libjpeg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +160,7 @@
 		04DC688C1B7864810060DAC4 = {
 			isa = PBXGroup;
 			children = (
+				23784EAD1B7FFEA8007E6BEE /* libjpeg.a */,
 				04DC68FB1B7869310060DAC4 /* libz.dylib */,
 				04DC68F71B7869210060DAC4 /* libfreetype.a */,
 				04DC68F81B7869210060DAC4 /* libpng.a */,
@@ -504,9 +508,10 @@
 				OTHER_LDFLAGS = (
 					"-lpng",
 					"-lfreetype",
+					"-ljpeg",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/third_include/libpng $(PROJECT_DIR)/third_include/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/third_include/libpng $(PROJECT_DIR)/third_include/freetype2 $(PROJECT_DIR)/third_include/libjpeg";
 			};
 			name = Debug;
 		};
@@ -529,9 +534,10 @@
 				OTHER_LDFLAGS = (
 					"-lpng",
 					"-lfreetype",
+					"-ljpeg",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/third_include/libpng $(PROJECT_DIR)/third_include/freetype2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/third_include/libpng $(PROJECT_DIR)/third_include/freetype2 $(PROJECT_DIR)/third_include/libjpeg";
 			};
 			name = Release;
 		};

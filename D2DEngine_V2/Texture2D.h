@@ -49,7 +49,8 @@ namespace D2D {
         
         enum class PixelFormat{
             I8,
-            GRBA8888,
+            RGB888,
+            RGBA8888,
         };
         
         Texture2D(){}
@@ -68,14 +69,17 @@ namespace D2D {
         
         bool hasAlpha(){return _hasAlpha;}
         
+        
+        
     public:
         
+        static void convertRGB888ToRGBA8888(const unsigned char* data, ssize_t dataLen, unsigned char* outData);
         void initWithData(const void* data,ssize_t dataLen,Texture2D::PixelFormat format,int width,int height);
         
     private:
         
         void readPng(const string& fullpath);
-        
+        void readJpeg(const string& fullpath);
     private:
         
         GLuint _textureId = 0;

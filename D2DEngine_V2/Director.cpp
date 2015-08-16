@@ -97,17 +97,25 @@ namespace D2D {
         
         auto texCache = TextureCache::getInstance();
         auto bgTex = texCache->addImage("home_bg.png");
-        auto klockTex1 = texCache->addImage("klocek1.png");
+        auto klockTex1 = texCache->addImage("play.png");
+        auto titleTex = texCache->addImage("title.jpg");
         
         auto bg = new Sprite(bgTex);
         bg->setScale(1,0.5f);
         bg->setPosition(320, 240);
         scene.addChild(bg);
         
+        auto title = new Sprite(titleTex);
+        title->setPosition(320,400);
+        title->setColor(1,1,1,0.1f);
+        scene.addChild(title);
+        
         auto klock = new Sprite(klockTex1);
         klock->setPosition(320, 240);
+        klock->setColor(1, 1, 0, 1);
         scene.addChild(klock);
         
+
         log("------- ready");
         
 //        auto node1 = new Node;

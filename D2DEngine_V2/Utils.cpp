@@ -21,7 +21,7 @@ namespace D2D {
     void CheckGLError(){
         GLenum error = glGetError();
         if (error) {
-            printf("OpenGL error %0xd\n", error);
+            printf("OpenGL error %0x\n", error);
         }
     }
     

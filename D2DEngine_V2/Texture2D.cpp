@@ -66,10 +66,42 @@ namespace D2D {
         
         if (postfix == "png") {
             readPng(fullpath);
+        }else if (postfix == "jpg" || postfix == "jpeg"){
+            readJpeg(fullpath);
         }else{
             printf("can not support image formatter : %s\n",postfix.c_str());
         }
 
+    }
+    
+    void Texture2D::readJpeg(const string& fullpath){
+        jpeg_data_t jpeg_data;
+        if (!jpeg_read(fullpath.c_str(),&jpeg_data)) {
+            _width = jpeg_data.width;
+            _height = jpeg_data.height;
+            _pixelFormat = jpeg_data.format;
+            _hasAlpha = false;
+            
+            glGenTextures(1,&_textureId);
+            glBindTexture(GL_TEXTURE_2D,_textureId);
+            
+            glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+            glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+            glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
+            glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
+            CheckGLError();
+            if (_pixelFormat == PixelFormat::I8) {
+                glTexImage2D(GL_TEXTURE_2D,0,GL_LUMINANCE,_width,_height,0,GL_LUMINANCE,GL_UNSIGNED_BYTE,jpeg_data.data);
+            }else if (_pixelFormat == PixelFormat::RGB888){
+                glTexImage2D(GL_TEXTURE_2D,0,
+                             GL_RGB,
+                             _width,_height,0,
+                             GL_RGB,GL_UNSIGNED_BYTE,jpeg_data.data);
+            }
+            
+            CheckGLError();
+            free(jpeg_data.data);
+        }
     }
     
     void Texture2D::readPng(const string& fullpath){
@@ -78,8 +110,7 @@ namespace D2D {
         {
             _width = png_data.width;
             _height = png_data.height;
-            
-            _pixelFormat = PixelFormat::GRBA8888;
+            _pixelFormat = png_data.format;
             
             glGenTextures(1,&_textureId);
             glBindTexture(GL_TEXTURE_2D,_textureId);
@@ -96,20 +127,7 @@ namespace D2D {
             free(png_data.data);  
         }
     }
-    
-//    void Texture2D::initWithFontData(const void *data, ssize_t dataLen, int pixelsWide, int pixelsHigh, const Size& contentSize){
-//        assert(dataLen>0 && pixelsWide>0 && pixelsHigh>0);
-//        glGenTextures(1,&_textureId);
-//        glBindTexture(GL_TEXTURE_2D,_textureId);
-//        
-//        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-//        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-//        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
-//        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
-//        CheckGLError();
-//        
-//        glTexImage2D(GL_TEXTURE_2D,0,GL_ALPHA, (GLsizei)pixelsWide, (GLsizei)pixelsHigh, 0,GL_ALPHA,GL_UNSIGNED_BYTE,data);
-//    }
+
     
     void Texture2D::initWithData(const void* data,ssize_t dataLen,Texture2D::PixelFormat format,int width,int height){
         assert(dataLen > 0 && width > 0 && height > 0);
@@ -124,7 +142,7 @@ namespace D2D {
         
         if (format == PixelFormat::I8) {
             glTexImage2D(GL_TEXTURE_2D,0,GL_LUMINANCE,width,height,0,GL_UNSIGNED_BYTE,GL_LUMINANCE,data);
-        }else if (format == PixelFormat::GRBA8888){
+        }else if (format == PixelFormat::RGBA8888){
             glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,width,height,0,GL_UNSIGNED_BYTE,GL_RGBA,data);
         }
         CheckGLError();
@@ -133,6 +151,19 @@ namespace D2D {
         _height = height;
         _pixelFormat = format;
     }
+    
+    
+    // RRRRRRRRGGGGGGGGBBBBBBBB -> RRRRRRRRGGGGGGGGBBBBBBBBAAAAAAAA
+    void Texture2D::convertRGB888ToRGBA8888(const unsigned char* data, ssize_t dataLen, unsigned char* outData){
+        for (ssize_t i = 0, l = dataLen - 2; i < l; i += 3)
+        {
+            *outData++ = data[i];         //R
+            *outData++ = data[i + 1];     //G
+            *outData++ = data[i + 2];     //B
+            *outData++ = 0xFF;            //A
+        }
+    }
+    
     
     //-------------------------------------------
     TextureAtlas::~TextureAtlas(){

@@ -102,13 +102,19 @@ namespace D2D {
         return true;
     }
     
-    Data FileUtil::getDataFromFile(const string& filename){
+    Data FileUtil::getDataFromFile(const string& filename,bool isFullPath){
         if (filename.empty()) {
             return Data::Null;
         }
         
-        auto fullpath = getFullPath(filename);
-        FILE* fp = fopen(fullpath.c_str(),"rb");
+        FILE* fp = nullptr;
+        if (!isFullPath) {
+            auto fullpath = getFullPath(filename);
+            fp = fopen(fullpath.c_str(),"rb");
+        }else{
+            fp = fopen(filename.c_str(),"rb");
+        }
+        
         fseek(fp,0,SEEK_END);
         size_t size = ftell(fp);
         fseek(fp,0,SEEK_SET);

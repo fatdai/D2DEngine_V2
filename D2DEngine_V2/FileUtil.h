@@ -32,7 +32,7 @@ namespace D2D {
         
         string getFullPath(const string& filename);
         
-        Data getDataFromFile(const string& filename);
+        Data getDataFromFile(const string& filename,bool isFullPath = false);
         
         bool isExist(const string& relativeFile);
         

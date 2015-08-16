@@ -10,7 +10,8 @@
 #define __D2DEngine__ImageLoader__
 
 #include <stdio.h>
-
+#include <jpeglib.h>
+#include "Texture2D.h"
 
 // 加载各种格式的图片
 namespace D2D {
@@ -27,10 +28,20 @@ namespace D2D {
         unsigned int width;
         unsigned int height;
         char* data;
-    }  *png_datap;
+        Texture2D::PixelFormat format;
+    }*png_datap;
     
     int png_read(const char* filename,png_datap data);
-
+    
+    
+    typedef struct jpeg_data_t{
+        unsigned int width;
+        unsigned int height;
+        unsigned char* data;
+        Texture2D::PixelFormat format;
+    }*jpeg_datap;
+    
+    int jpeg_read(const char* filename,jpeg_datap result);
     
 }
 
