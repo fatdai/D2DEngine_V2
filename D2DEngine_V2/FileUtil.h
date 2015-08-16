@@ -21,10 +21,10 @@ namespace D2D {
         
     public:
         
-        static FileUtil* _fileUtil;
+        static FileUtil* _sFileUtil;
         
         static FileUtil* getInstacne(){
-            return _fileUtil;
+            return _sFileUtil;
         }
         static void init(const string& baseDir);
         
@@ -44,6 +44,7 @@ namespace D2D {
         
         string getDefauleShaderPath(const string& shaderFile);
         
+        void release();
         
     private:
         

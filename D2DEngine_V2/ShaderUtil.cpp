@@ -12,6 +12,7 @@
 #include "Director.h"
 #include "FileUtil.h"
 #include <fstream>
+#include "globals.h"
 
 namespace D2D {
     
@@ -126,7 +127,7 @@ namespace D2D {
     
     //************************************************
     
-    ShaderUtil* ShaderUtil::_shaderUtil = nullptr;
+    ShaderUtil* ShaderUtil::_sShaderUtil = nullptr;
     
     
     ShaderUtil::~ShaderUtil(){
@@ -139,9 +140,9 @@ namespace D2D {
     }
         
     void ShaderUtil::init(){
-        if (_shaderUtil == nullptr) {
-            _shaderUtil = new ShaderUtil;
-            _shaderUtil->loadDefaultShaders();
+        if (_sShaderUtil == nullptr) {
+            _sShaderUtil = new ShaderUtil;
+            _sShaderUtil->loadDefaultShaders();
         }
     }
 
@@ -190,6 +191,13 @@ namespace D2D {
         printf("not found shader type:%d\n",type);
         abort();
         return nullptr;
+    }
+    
+    void ShaderUtil::release(){
+        if (_sShaderUtil != nullptr) {
+            delete _sShaderUtil;
+            _sShaderUtil = nullptr;
+        }
     }
 }
 

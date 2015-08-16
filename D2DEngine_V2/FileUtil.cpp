@@ -12,13 +12,13 @@
 
 namespace D2D {
     
-    FileUtil* FileUtil::_fileUtil = nullptr;
+    FileUtil* FileUtil::_sFileUtil = nullptr;
     
     
     void FileUtil::init(const string& baseDir){
-        if (_fileUtil == nullptr) {
+        if (_sFileUtil == nullptr) {
             
-            _fileUtil = new FileUtil;
+            _sFileUtil = new FileUtil;
             
             auto bias = baseDir.find_last_of('/');
             string newBaseDir;
@@ -28,12 +28,12 @@ namespace D2D {
                 newBaseDir = baseDir;
             }
             
-            _fileUtil->_baseDir = newBaseDir;
+            _sFileUtil->_baseDir = newBaseDir;
             
             // 计算默认shader位置
             auto ret = newBaseDir.find_last_of('/');
             if (ret != string::npos) {
-                _fileUtil->_internalDir = newBaseDir.substr(0,ret);
+                _sFileUtil->_internalDir = newBaseDir.substr(0,ret);
             }else{
                 printf("can not set  _internalDir.\n");
                 abort();
@@ -100,6 +100,13 @@ namespace D2D {
         }
         fclose(fp);
         return true;
+    }
+    
+    void FileUtil::release(){
+        if (_sFileUtil != nullptr) {
+            delete _sFileUtil;
+            _sFileUtil = nullptr;
+        }
     }
     
     Data FileUtil::getDataFromFile(const string& filename,bool isFullPath){

@@ -14,10 +14,11 @@
 #include <cstdlib>
 #include <assert.h>
 #include "ShaderUtil.h"
+#include "globals.h"
 
 namespace D2D {
     
-    TextureCache* TextureCache::_textureCache = nullptr;
+    TextureCache* TextureCache::_sTextureCache = nullptr;
     
     TextureCache::~TextureCache(){
         auto it = _textures.begin();
@@ -29,8 +30,8 @@ namespace D2D {
     }
     
     void TextureCache::init(){
-        if (_textureCache == nullptr) {
-            _textureCache = new TextureCache;
+        if (_sTextureCache == nullptr) {
+            _sTextureCache = new TextureCache;
         }
     }
     
@@ -45,6 +46,13 @@ namespace D2D {
         auto texture2d = new Texture2D(relativePath);
         _textures.insert(pair<string,Texture2D*>(relativePath,texture2d));
         return texture2d;
+    }
+    
+    void TextureCache::release(){
+        if (_sTextureCache != nullptr) {
+            delete _sTextureCache;
+            _sTextureCache = nullptr;
+        }
     }
     
     //*******************************************

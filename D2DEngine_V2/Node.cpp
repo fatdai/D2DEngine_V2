@@ -234,8 +234,8 @@ namespace D2D {
             // 先断开自己
             for (int i = 0; i < _parent->_children.size(); ++i) {
                 if (_parent->_children[i] == this) {
-                    this->_parent = nullptr;
                     _parent->_children.erase(_parent->_children.begin() + i);
+                    this->_parent = nullptr;
                     this->onExit();
                     break;
                 }
@@ -250,5 +250,4 @@ namespace D2D {
         }
         _children.clear();
     }
-
 }

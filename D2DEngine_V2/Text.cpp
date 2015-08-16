@@ -11,6 +11,7 @@
 #include "Director.h"
 #include "Utils.h"
 #include "FileUtil.h"
+#include "globals.h"
 
 
 namespace D2D {

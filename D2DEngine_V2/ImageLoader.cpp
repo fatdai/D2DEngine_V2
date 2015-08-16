@@ -40,6 +40,7 @@ namespace D2D {
         unsigned char* header = (unsigned char*)malloc(PNG_READ_HEADER);
         fread(header,1,PNG_READ_HEADER,fp);
         int is_png = !png_sig_cmp(header,0,PNG_READ_HEADER);
+        free(header);
         if(!is_png) return PNG_ERROR_NOT_PNG;
         
         png_structp png_ptr;

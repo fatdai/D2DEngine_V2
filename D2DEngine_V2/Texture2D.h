@@ -29,13 +29,15 @@ namespace D2D {
     class TextureCache{
     public:
         ~TextureCache();
-        static TextureCache* _textureCache;
+        static TextureCache* _sTextureCache;
         static TextureCache* getInstance(){
-            return _textureCache;
+            return _sTextureCache;
         }
         static void init();
         
         Texture2D* addImage(const string& relativePath);
+        
+        void release();
         
     private:
         map<string,Texture2D*> _textures;

@@ -83,7 +83,7 @@ namespace D2D {
         
     private:
         
-        static ShaderUtil* _shaderUtil;
+        static ShaderUtil* _sShaderUtil;
         
         void loadDefaultShaders();
         
@@ -91,12 +91,14 @@ namespace D2D {
         
         static void init();
         static ShaderUtil* getInstance(){
-            return _shaderUtil;
+            return _sShaderUtil;
         }
         
         Shader* getShader(ShaderType type);
         
         ~ShaderUtil();
+        
+        void release();
         
     private:
         

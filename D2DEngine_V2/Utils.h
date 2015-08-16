@@ -16,21 +16,25 @@ using namespace std;
 
 // 包含一些全局方法
 namespace D2D {
-    void CheckGLError();
+    
+   // void CheckGLError();
+    
     string GetStringFromFile(const string& path);
+    
     string GetPostfix(const string& filename);
     
     bool UTF8ToUTF16(const std::string& utf8, std::u16string& outUtf16);
+    
     bool UTF16ToUTF8(const std::u16string& utf16, std::string& outUtf8);
     
     // 角度转换
-    inline float DegToRad(float degress){
-        return degress * M_PI / 180.0f;
-    }
-    
-    inline float RadToDeg(float rad){
-        return rad * 180.0f / M_PI;
-    }
+//    inline float DegToRad(float degress){
+//        return degress * M_PI / 180.0f;
+//    }
+//    
+//    inline float RadToDeg(float rad){
+//        return rad * 180.0f / M_PI;
+//    }
 }
 
 

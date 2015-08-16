@@ -18,12 +18,12 @@ namespace D2D {
     typedef unsigned char   UTF8;   /* typically 8 bits */
     typedef unsigned char   Boolean; /* 0 or 1 */
     
-    void CheckGLError(){
-        GLenum error = glGetError();
-        if (error) {
-            printf("OpenGL error %0x\n", error);
-        }
-    }
+//    void CheckGLError(){
+//        GLenum error = glGetError();
+//        if (error) {
+//            printf("OpenGL error %0x\n", error);
+//        }
+//    }
     
     string GetStringFromFile(const string& path){
         FILE* fp = fopen(path.c_str(),"rt");

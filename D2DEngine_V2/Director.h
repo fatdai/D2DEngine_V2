@@ -15,23 +15,18 @@
 #include "CCMath.h"
 #include <sys/time.h>
 #include <string>
+#include "Scene.h"
 #include <ft2build.h>
 #include FT_FREETYPE_H
 using namespace std;
 
 namespace D2D {
     
-    //---------------------------------------------------
-    // 有些东西就是要是全局变量,
-    // 可以更加方便的访问
+#define DirectorObj Director::getInstance()
     
-    
-    //---------------------------------------------------
-    
-    // 单例,进行全局的管理
     class Director {
         
-        static Director *_director;
+        static Director *_sDirector;
         
     public:
         
@@ -40,19 +35,31 @@ namespace D2D {
 
     public:
         
-        Director(const string& resRootPath);
-        
+        Director();
         ~Director();
         
-        static Director *getInstance() { return _director; };
-        
-        void init(const string &title,int w, int h);
+        static Director* getInstance() { return _sDirector; };
+        static void init(const string& resRootPath,
+                         int width,
+                         int height);
         
         Mat4& getProjMat4(){
             return _projMat;
         }
         
         void run();
+        
+        void loop();
+        
+        void replaceScene(Scene* scene);
+        
+        void release();
+        
+    private:
+        
+        void initSelf(const string& resRootPath,
+                      int width,
+                      int height);
         
     public:
         
@@ -61,23 +68,13 @@ namespace D2D {
         
     private:
         
-        void initGL();
-        
-        void initRender();
-        
-    private:
-                
         float _w = 0, _h = 0;
-        
-        // 用来计算fps
-        unsigned int _totalFrames = 0;
-        unsigned int _frames = 0;
-        
-        struct timeval _startTime;
-        
+
         string _resRootPath;
         
         Mat4 _projMat;
+        
+        Scene* _currentScene = nullptr;
     };
 };
 

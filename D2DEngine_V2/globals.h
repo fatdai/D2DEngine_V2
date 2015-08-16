@@ -14,19 +14,32 @@
 #include <SDL2/SDL.h>
 using namespace std;
 
+
+// ------ 检测 opengl 错误
+#ifndef CheckGLError
+#define CheckGLError() \
+do { \
+GLenum __error = glGetError(); \
+if(__error) { \
+D2D::log("OpenGL error 0x%04X in %s %s %d\n", __error, __FILE__, __FUNCTION__, __LINE__); \
+} \
+} while (false)
+#endif
+
+// 角度转弧度
+#define DegToRad(__ANGLE__) ((__ANGLE__) * 0.01745329252f) // PI / 180
+
+// 弧度转角度
+#define RadToDeg(__ANGLE__) ((__ANGLE__) * 57.29577951f) // PI * 180
+
 namespace D2D {
     
-    //--------------------------------------------
-    
-    extern SDL_Window* _gWindow;
-    extern SDL_GLContext _gGLContext;
-    
-    //--------------------------------------------
     void log(const char * format, ...);
     
-    bool initSDL(const string& title,int w,int h);
-    
-    void destorySDL();
+    /**
+     *  @return 从1970年1月1日到现在的毫秒数
+     */
+    long Now();
 }
 
 #endif /* defined(__D2DEngine_V2__globals__) */
